@@ -1,0 +1,23 @@
+{
+  "name": "h5p-utils",
+  "version": "1.0.0",
+  "description": "A set of utility classes and functions to be used when creaintg H5P widgets and content types.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boyum/h5p-utils.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boyum/h5p-utils/issues"
+  },
+  "homepage": "https://github.com/boyum/h5p-utils#readme",
+  "devDependencies": {
+    "h5p-types": "github:boyum/h5p-types"
+  }
+}
