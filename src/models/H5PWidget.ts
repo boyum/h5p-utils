@@ -1,4 +1,4 @@
-import {
+import type {
   H5PField,
   H5PForm,
   H5PSetValue,
@@ -10,29 +10,16 @@ export class H5PWidget<
   TField extends H5PField = H5PField,
   TParams = ParamTypeInferredFromFieldType<TField>
 > extends H5P.EventDispatcher {
-  public field: Readonly<TField>;
-
-  protected parent: H5PForm;
-
-  protected params: TParams | undefined;
-
-  protected setValue: H5PSetValue<TParams>;
-
   protected wrapper: HTMLElement;
 
   constructor(
-    parent: H5PForm<TParams>,
-    field: TField,
-    params: TParams | undefined,
-    setValue: H5PSetValue<TParams>
+    protected parent: H5PForm<TParams>,
+    public field: TField,
+    protected params: TParams | undefined,
+    protected setValue: H5PSetValue<TParams>
   ) {
     super();
     this.wrapper = H5PWidget.createWrapperElement();
-
-    this.parent = parent;
-    this.field = field;
-    this.params = params;
-    this.setValue = setValue;
   }
 
   private static createWrapperElement(): HTMLDivElement {

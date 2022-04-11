@@ -1,4 +1,4 @@
-import { H5PEditorObject, H5PObject } from "h5p-types";
+import type { H5PEditorObject, H5PObject } from "h5p-types";
 
 export const H5P: H5PObject = (window as any).H5P ?? {};
 export const H5PEditor: H5PEditorObject = (window as any).H5PEditor ?? {};

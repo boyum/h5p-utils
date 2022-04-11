@@ -12,7 +12,8 @@
     "noEmit": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "extends": "@tsconfig/strictest/tsconfig.json"
 }
