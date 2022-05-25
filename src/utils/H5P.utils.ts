@@ -4,6 +4,7 @@ import type {
   IH5PContentType,
   IH5PWidget,
 } from "h5p-types";
+import { H5PContentType } from "../models/H5PContentType";
 
 export const H5P: H5PObject = (window as any).H5P ?? {};
 export const H5PEditor: H5PEditorObject = (window as any).H5PEditor ?? {};
@@ -35,7 +36,7 @@ export const getImageUrl = (imagePath: string | undefined): string | null => {
 
 export const registerContentType = (
   name: string,
-  contentType: IH5PContentType,
+  contentType: Function,
 ): void => {
   (H5P as any)[name] = contentType;
 };
@@ -48,7 +49,7 @@ export const registerContentType = (
 export const registerWidget = (
   h5pName: string,
   widgetName: string,
-  widget: IH5PWidget,
+  widget: Function,
 ): void => {
   H5PEditor[h5pName] = widget;
   H5PEditor.widgets[widgetName] = widget;

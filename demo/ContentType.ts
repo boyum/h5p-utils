@@ -1,11 +1,12 @@
 import type { IH5PContentType } from "h5p-types";
 import { H5PContentType } from "../src/models/H5PContentType";
+import { registerContentType } from "../src/utils/H5P.utils";
 
 type Params = {
   person: string;
 };
 
-export class H5PWrapper
+export class ContentType
   extends H5PContentType<Params>
   implements IH5PContentType
 {
@@ -28,3 +29,5 @@ export class H5PWrapper
     this.wrapper.appendChild(div);
   }
 }
+
+registerContentType("ContentType", ContentType);
