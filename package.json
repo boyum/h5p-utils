@@ -1,10 +1,16 @@
 {
   "name": "h5p-utils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A set of utility classes and functions to be used when creaintg H5P widgets and content types.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tsc --project demo/tsconfig.json",
+    "format:check": "prettier . --check",
+    "format:fix": "prettier . --write",
+    "build": "ncc build index.ts --source-map --license license.txt",
+    "publish-to-npm": "npm run build && np"
   },
   "repository": {
     "type": "git",
@@ -19,6 +25,12 @@
   "homepage": "https://github.com/boyum/h5p-utils#readme",
   "devDependencies": {
     "@tsconfig/strictest": "^1.0.1",
-    "h5p-types": "github:boyum/h5p-types"
-  }
+    "@vercel/ncc": "^0.33.4",
+    "h5p-types": "^0.0.21",
+    "np": "^7.6.1",
+    "prettier": "^2.6.2",
+    "prettier-config": "github:boyum/prettier-config",
+    "typescript": "4.6"
+  },
+  "prettier": "prettier-config"
 }

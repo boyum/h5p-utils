@@ -8,7 +8,7 @@ import { H5P } from "../utils/H5P.utils";
 
 export class H5PWidget<
   TField extends H5PField = H5PField,
-  TParams = ParamTypeInferredFromFieldType<TField>
+  TParams = ParamTypeInferredFromFieldType<TField>,
 > extends H5P.EventDispatcher {
   protected wrapper: HTMLElement;
 
@@ -16,7 +16,7 @@ export class H5PWidget<
     protected parent: H5PForm<TParams>,
     public field: TField,
     protected params: TParams | undefined,
-    protected setValue: H5PSetValue<TParams>
+    protected setValue: H5PSetValue<TParams>,
   ) {
     super();
     this.wrapper = H5PWidget.createWrapperElement();

@@ -1,10 +1,10 @@
-import { H5PFieldText, IH5PWidget } from "h5p-types";
+import type { H5PFieldText, IH5PWidget } from "h5p-types";
 import { H5PWidget } from "../src/models/H5PWidget";
 import { H5PEditor } from "../src/utils/H5P.utils";
 
 type Field = H5PFieldText;
 
-export class MyWidget extends H5PWidget<Field> implements IH5PWidget {
+export class Widget extends H5PWidget<Field> implements IH5PWidget {
   appendTo($container: JQuery<HTMLElement>): void {
     const containerElement = $container.get(0);
     if (!containerElement) {
@@ -21,7 +21,7 @@ export class MyWidget extends H5PWidget<Field> implements IH5PWidget {
       [this.field],
       {},
       $(this.wrapper),
-      this.parent
+      this.parent,
     );
 
     const labelElement = document.createElement("label");
@@ -30,6 +30,10 @@ export class MyWidget extends H5PWidget<Field> implements IH5PWidget {
     const nameInput = document.createElement("input");
     nameInput.type = "text";
     nameInput.onchange = () => setValue(field, nameInput.value);
+
+    if (name) {
+      nameInput.value = name;
+    }
 
     labelElement.appendChild(nameInput);
     wrapper.appendChild(labelElement);
