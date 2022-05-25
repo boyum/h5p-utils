@@ -5,4 +5,6 @@ export {
   H5PEditor,
   getAbsoluteUrlFromRelativePath,
   getImageUrl,
+  registerContentType,
+  registerWidget,
 } from "./src/utils/H5P.utils";
