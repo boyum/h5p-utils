@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "files": [
-    "dist/**/*"
+    "dist/**/*",
+    "tsconfig.json"
   ],
   "scripts": {
     "test": "tsc --project demo/tsconfig.json",
