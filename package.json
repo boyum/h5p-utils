@@ -13,7 +13,7 @@
     "test": "tsc --project demo/tsconfig.json",
     "format:check": "prettier . --check",
     "format:fix": "prettier . --write",
-    "build": "ncc build index.ts --source-map --license license.txt",
+    "build": "npx rimraf dist && ncc build index.ts --no-source-map-register --license license.txt",
     "publish-to-npm": "npm run build && np"
   },
   "repository": {
