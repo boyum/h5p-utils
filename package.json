@@ -4,7 +4,6 @@
   "description": "A set of utility classes and functions to be used when creaintg H5P widgets and content types.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "module",
   "files": [
     "dist/**/*",
     "tsconfig.json"
