@@ -12,7 +12,7 @@
     "test": "tsc --project demo/tsconfig.json",
     "format:check": "prettier . --check",
     "format:fix": "prettier . --write",
-    "build": "npx rimraf dist && ncc build index.ts --no-source-map-register --license license.txt",
+    "build": "npx rimraf dist && ncc build index.ts --no-source-map-register --license license.txt && replace-in-file '__dirname + ' '' ./dist/index.js",
     "publish-to-npm": "npm run build && np"
   },
   "repository": {
@@ -28,12 +28,13 @@
   "homepage": "https://github.com/boyum/h5p-utils#readme",
   "devDependencies": {
     "@tsconfig/strictest": "^1.0.1",
-    "@vercel/ncc": "^0.33.4",
-    "h5p-types": "^0.0.21",
+    "@vercel/ncc": "^0.34.0",
+    "h5p-types": "^0.1.0",
     "np": "^7.6.1",
     "prettier": "^2.6.2",
     "prettier-config": "github:boyum/prettier-config",
-    "typescript": "4.6"
+    "replace-in-file": "^6.3.5",
+    "typescript": "^4.7.3"
   },
   "prettier": "prettier-config"
 }
