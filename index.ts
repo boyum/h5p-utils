@@ -1,5 +1,5 @@
-export { H5PContentType } from "./src/models/H5PContentType";
-export { H5PWidget } from "./src/models/H5PWidget";
+export { H5PContentType } from "./src/models/H5PContentType.js";
+export { H5PWidget } from "./src/models/H5PWidget.js";
 export {
   H5P,
   H5PEditor,
@@ -7,4 +7,4 @@ export {
   getImageUrl,
   registerContentType,
   registerWidget,
-} from "./src/utils/H5P.utils";
+} from "./src/utils/H5P.utils.js";
