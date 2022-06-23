@@ -4,7 +4,7 @@ import type {
   H5PSetValue,
   ParamTypeInferredFromFieldType,
 } from "h5p-types";
-import { H5P } from "../utils/H5P.utils";
+import { H5P } from "../utils/H5P.utils.js";
 
 export class H5PWidget<
   TField extends H5PField = H5PField,
