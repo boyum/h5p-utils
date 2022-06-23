@@ -1,6 +1,6 @@
 import type { H5PFieldText } from "h5p-types";
-import { H5PWidget } from "../src/models/H5PWidget";
-import { H5PEditor, registerWidget } from "../src/utils/H5P.utils";
+import { H5PWidget } from "../src/models/H5PWidget.js";
+import { H5PEditor, registerWidget } from "../src/utils/H5P.utils.js";
 
 type Field = H5PFieldText;
 
