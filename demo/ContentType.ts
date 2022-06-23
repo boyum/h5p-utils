@@ -1,6 +1,6 @@
 import type { IH5PContentType } from "h5p-types";
-import { H5PContentType } from "../src/models/H5PContentType";
-import { registerContentType } from "../src/utils/H5P.utils";
+import { H5PContentType } from "../src/models/H5PContentType.js";
+import { registerContentType } from "../src/utils/H5P.utils.js";
 
 type Params = {
   person: string;
