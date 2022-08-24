@@ -2,14 +2,18 @@ import type {
   H5PField,
   H5PForm,
   H5PSetValue,
+  IH5PWidget,
   ParamTypeInferredFromFieldType,
 } from "h5p-types";
 import { H5P } from "../utils/H5P.utils";
 
-export class H5PWidget<
-  TField extends H5PField = H5PField,
-  TParams = ParamTypeInferredFromFieldType<TField>,
-> extends H5P.EventDispatcher {
+export abstract class H5PWidget<
+    TField extends H5PField = H5PField,
+    TParams = ParamTypeInferredFromFieldType<TField>,
+  >
+  extends H5P.EventDispatcher
+  implements IH5PWidget
+{
   protected wrapper: HTMLElement;
 
   constructor(
@@ -19,10 +23,12 @@ export class H5PWidget<
     protected setValue: H5PSetValue<TParams>,
   ) {
     super();
-    this.wrapper = H5PWidget.createWrapperElement();
+    this.wrapper = document.createElement("div");
   }
 
-  private static createWrapperElement(): HTMLDivElement {
-    return document.createElement("div");
-  }
+  public abstract appendTo($container: JQuery<HTMLElement>): void;
+
+  public abstract validate(): boolean;
+
+  public abstract remove(): void;
 }
