@@ -1,9 +1,12 @@
-import type { H5PExtras } from "h5p-types";
+import type { H5PExtras, IH5PContentType } from "h5p-types";
 import { H5P } from "../utils/H5P.utils";
 
-export class H5PContentType<
-  TParams extends Record<string, unknown> | unknown = unknown,
-> extends H5P.EventDispatcher {
+export abstract class H5PContentType<
+    TParams extends Record<string, unknown> | unknown = unknown,
+  >
+  extends H5P.EventDispatcher
+  implements IH5PContentType<TParams>
+{
   protected wrapper: HTMLElement;
 
   constructor(
@@ -12,10 +15,8 @@ export class H5PContentType<
     protected extras?: H5PExtras,
   ) {
     super();
-    this.wrapper = H5PContentType.createWrapperElement();
+    this.wrapper = document.createElement("div");
   }
 
-  private static createWrapperElement(): HTMLDivElement {
-    return document.createElement("div");
-  }
+  public abstract attach($wrapper: JQuery<HTMLElement>): void;
 }
