@@ -45,7 +45,7 @@
     "prettier-config": "github:boyum/prettier-config",
     "replace-in-file": "^6.3.5",
     "typescript": "^4.8.2",
-    "vite": "^2.9.12"
+    "vite": "^2.9.15"
   },
   "prettier": "prettier-config",
   "commitlint": {
