@@ -10,7 +10,7 @@ export abstract class H5PContentType<
   protected wrapper: HTMLElement;
 
   constructor(
-    protected params: TParams,
+    public params: TParams,
     protected contentId: string,
     protected extras?: H5PExtras,
   ) {
