@@ -35,8 +35,8 @@
   },
   "homepage": "https://github.com/boyum/h5p-utils#readme",
   "devDependencies": {
-    "@commitlint/cli": "^17.4.2",
-    "@commitlint/config-conventional": "^17.4.2",
+    "@commitlint/cli": "^17.4.3",
+    "@commitlint/config-conventional": "^17.4.3",
     "@tsconfig/strictest": "^1.0.2",
     "@vercel/ncc": "^0.34.0",
     "h5p-types": "^0.1.1",
