@@ -1,5 +1,6 @@
-import type { H5PEditorObject, H5PObject } from "h5p-types";
+import type { H5PEditorObject, H5PField, H5PObject } from "h5p-types";
 import type { H5PContentType } from "../models/H5PContentType";
+import type { H5PResumableContentType } from "../models/H5PResumableContentType";
 import type { H5PWidget } from "../models/H5PWidget";
 
 export const H5P: H5PObject = (window as any).H5P ?? {};
@@ -30,9 +31,11 @@ export const getImageUrl = (imagePath: string | undefined): string | null => {
   return imageUrl;
 };
 
-export const registerContentType = (
+export const registerContentType = <TParams = unknown, TState = unknown>(
   name: string,
-  contentType: typeof H5PContentType,
+  contentType:
+    | typeof H5PContentType<TParams>
+    | typeof H5PResumableContentType<TParams, TState>,
 ): void => {
   (H5P as any)[name] = contentType;
 };
@@ -42,10 +45,13 @@ export const registerContentType = (
  * @param widgetName The name that's used when using the widget in semantics.json (e. g. `html`, `showWhen`)
  * @param widget
  */
-export const registerWidget = (
+export const registerWidget = <
+  TField extends H5PField = H5PField,
+  TParams = unknown,
+>(
   h5pName: string,
   widgetName: string,
-  widget: typeof H5PWidget,
+  widget: typeof H5PWidget<TField, TParams>,
 ): void => {
   H5PEditor[h5pName] = widget;
   H5PEditor.widgets[widgetName] = widget;

@@ -1,5 +1,5 @@
 import type { H5PExtras, IH5PResumableType } from "h5p-types";
-import { H5PContentType } from "./H5PContentType";
+import { H5PContentType } from "./H5PContentType.js";
 
 export abstract class H5PResumableContentType<
     TParams = unknown,
@@ -8,8 +8,7 @@ export abstract class H5PResumableContentType<
   extends H5PContentType<TParams>
   implements IH5PResumableType<TState>
 {
-  // @ts-expect-error
-  private state: TState | undefined;
+  protected state: TState | undefined;
 
   constructor(
     params: TParams,
@@ -21,5 +20,5 @@ export abstract class H5PResumableContentType<
     this.state = previousState;
   }
 
-  abstract getCurrentState(): TState;
+  abstract getCurrentState(): TState | undefined;
 }
