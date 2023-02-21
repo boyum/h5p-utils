@@ -1,6 +1,6 @@
 {
   "name": "h5p-utils",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "A set of utility classes and functions to be used when creaintg H5P widgets and content types.",
   "type": "module",
   "main": "dist/h5p-utils.cjs.js",
