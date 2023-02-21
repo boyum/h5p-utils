@@ -1,5 +1,5 @@
 import type { H5PExtras, IH5PContentType } from "h5p-types";
-import { H5P } from "../utils/H5P.utils.js";
+import { H5P } from "../utils/H5P.utils";
 
 export abstract class H5PContentType<
     TParams extends Record<string, unknown> | unknown = unknown,

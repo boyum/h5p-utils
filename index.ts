@@ -1,5 +1,6 @@
 export { H5PContentType } from "./src/models/H5PContentType.js";
 export { H5PWidget } from "./src/models/H5PWidget.js";
+export { H5PResumableContentType } from "./src/models/H5PResumableContentType.js";
 export {
   H5P,
   H5PEditor,
