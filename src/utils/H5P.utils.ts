@@ -1,10 +1,6 @@
-import type {
-  H5PEditorObject,
-  H5PField,
-  H5PObject,
-  ParamTypeInferredFromFieldType,
-} from "h5p-types";
+import type { H5PEditorObject, H5PField, H5PObject } from "h5p-types";
 import type { H5PContentType } from "../models/H5PContentType";
+import type { H5PResumableContentType } from "../models/H5PResumableContentType";
 import type { H5PWidget } from "../models/H5PWidget";
 
 export const H5P: H5PObject = (window as any).H5P ?? {};
@@ -35,9 +31,11 @@ export const getImageUrl = (imagePath: string | undefined): string | null => {
   return imageUrl;
 };
 
-export const registerContentType = <TParams = unknown>(
+export const registerContentType = <TParams = unknown, TState = unknown>(
   name: string,
-  contentType: typeof H5PContentType<TParams>,
+  contentType:
+    | typeof H5PContentType<TParams>
+    | typeof H5PResumableContentType<TParams, TState>,
 ): void => {
   (H5P as any)[name] = contentType;
 };
@@ -49,7 +47,7 @@ export const registerContentType = <TParams = unknown>(
  */
 export const registerWidget = <
   TField extends H5PField = H5PField,
-  TParams = ParamTypeInferredFromFieldType<TField>,
+  TParams = unknown,
 >(
   h5pName: string,
   widgetName: string,
