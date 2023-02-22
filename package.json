@@ -39,7 +39,7 @@
     "@commitlint/config-conventional": "^17.4.4",
     "@tsconfig/strictest": "^1.0.2",
     "@vercel/ncc": "^0.36.1",
-    "h5p-types": "^1.11.1",
+    "h5p-types": "^1.12.0",
     "np": "^7.6.3",
     "prettier": "^2.8.4",
     "prettier-config": "github:boyum/prettier-config",
