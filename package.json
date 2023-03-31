@@ -40,7 +40,7 @@
     "@tsconfig/strictest": "^1.0.2",
     "@vercel/ncc": "^0.36.1",
     "h5p-types": "^1.15.0",
-    "np": "^7.6.4",
+    "np": "^7.7.0",
     "prettier": "^2.8.7",
     "prettier-config": "github:boyum/prettier-config",
     "replace-in-file": "^6.3.5",
