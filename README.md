@@ -1,5 +1,7 @@
 # h5p-utils
 
+⚠️ This project has been moved to [h5p-types](https://github.com/boyum/h5p-types/tree/main/packages/h5p-utils). :warning:
+
 A set of utility classes and functions to be used when creaintg H5P widgets and content types.
 
 ## Global objects
