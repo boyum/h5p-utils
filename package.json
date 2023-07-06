@@ -9,7 +9,7 @@
     "dist/**/*",
     "tsconfig.json"
   ],
-  "module": "dist/index.es.js",
+  "module": "dist/index.js",
   "exports": {
     ".": {
       "import": {
