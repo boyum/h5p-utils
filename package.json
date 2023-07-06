@@ -3,7 +3,7 @@
   "version": "3.2.3-0",
   "description": "A set of utility classes and functions to be used when creaintg H5P widgets and content types.",
   "type": "module",
-  "main": "dist/index.cjs.js",
+  "main": "dist/index.cjs",
   "types": "dist/index.d.cts",
   "files": [
     "dist/**/*",
